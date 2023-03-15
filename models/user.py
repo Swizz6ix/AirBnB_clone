@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 """Defines the User class."""
+import os
+import sys
+import inspect
+
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+
 from models.base_model import BaseModel
 
 

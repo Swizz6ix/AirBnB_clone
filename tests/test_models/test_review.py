@@ -82,8 +82,7 @@ class TestReview_instantiation(unittest.TestCase):
         rv = Review(None)
         self.assertNotIn(None, rv.__dict__.values())
 
-
-def test_instantiation_with_kwargs(self):
+    def test_instantiation_with_kwargs(self):
         dt = datetime.today()
         dt_iso = dt.isoformat()
         rv = Review(id="345", created_at=dt_iso, updated_at=dt_iso)

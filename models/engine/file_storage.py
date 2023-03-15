@@ -1,5 +1,11 @@
 #!/usr/bin/python3
 """Defines the FileStorage class."""
+
+import os
+import sys
+import inspect
+
+sys.path.append(os.path.abspath(os.path.join(__file__,"..", "..", "..", "models")))
 import json
 from models.base_model import BaseModel
 from models.user import User

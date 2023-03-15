@@ -6,6 +6,10 @@ Unittest classes:
     TestCity_to_dict
 """
 import os
+import sys
+import inspect
+
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import models
 import unittest
 from datetime import datetime
@@ -43,8 +47,7 @@ class TestCity_instantiation(unittest.TestCase):
         self.assertIn("name", dir(cy))
         self.assertNotIn("name", cy.__dict__)
 
-
-def test_two_cities_unique_ids(self):
+    def test_two_cities_unique_ids(self):
         cy1 = City()
         cy2 = City()
         self.assertNotEqual(cy1.id, cy2.id)
