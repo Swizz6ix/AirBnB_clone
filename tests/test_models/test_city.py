@@ -8,7 +8,6 @@ Unittest classes:
 import os
 import sys
 import inspect
-
 sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import models
 import unittest

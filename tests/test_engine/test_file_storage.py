@@ -5,7 +5,10 @@ Unittest classes:
     TestFileStorage_methods
 """
 import os
+import sys
+import inspect
 import json
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import models
 import unittest
 from datetime import datetime
@@ -106,8 +109,7 @@ class TestFileStorage_methods(unittest.TestCase):
         with self.assertRaises(AttributeError):
             models.storage.new(None)
 
-
-def test_save(self):
+    def test_save(self):
         bm = BaseModel()
         us = User()
         st = State()
