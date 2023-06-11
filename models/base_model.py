@@ -1,10 +1,5 @@
 #!/usr/bin/python3
 """Defines the BaseModel class."""
-import os
-import sys
-import inspect
-
-sys.path.insert(1, os.path.join(sys.path[0], '..'))
 import models
 from uuid import uuid4
 from datetime import datetime

@@ -46,9 +46,11 @@ class HBNBCommand(cmd.Cmd):
             "Amenity",
             "Review"
             }
+            
     def emptyline(self):
         """Do nothing upon receiving an empty line."""
         pass
+
     def default(self, arg):
         """Default behavior for cmd module when input is invalid"""
         argdict = {
@@ -127,20 +129,20 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def do_all(self, arg):
-                """Usage: all or all <class> or <class>.all()
-                Display string representations of all instances of a given class.
-                If no class is specified, displays all instantiated objects."""
-                argl = parse(arg)
-                if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
-                    print("** class doesn't exist **")
-                else:
-                    objl = []
-                    for obj in storage.all().values():
-                        if len(argl) > 0 and argl[0] == obj.__class__.__name__:
-                            objl.append(obj.__str__())
-                        elif len(argl) == 0:
-                            objl.append(obj.__str__())
-                            print(objl)
+        """Usage: all or all <class> or <class>.all()
+        Display string representations of all instances of a given class.
+        If no class is specified, displays all instantiated objects."""
+        argl = parse(arg)
+        if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
+            print("** class doesn't exist **")
+        else:
+            objl = []
+            for obj in storage.all().values():
+                if len(argl) > 0 and argl[0] == obj.__class__.__name__:
+                    objl.append(obj.__str__())
+                elif len(argl) == 0:
+                    objl.append(obj.__str__())
+            print(objl)
 
     def do_count(self, arg):
         """Usage: count <class> or <class>.count()
